@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrolink - Ayuda</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #08cef1,#82fde9,#edf4f7);
+            color: #333;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Título principal */
+        h1 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Sección de contenido */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        /* Títulos de secciones */
+        .section h2 {
+            color: #00509e;
+            font-size: 1.5em;
+            border-bottom: 2px solid #00509e;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Listas */
+        .section ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Información de contacto */
+        .contact-info {
+            font-size: 0.9em;
+            color: #555;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            text-align: center;
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Botones */
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #00509e;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #003366;
+        }
+
+        .btn {
+   width: 8.5em;
+   height: 2.3em;
+   margin: 0.5em;
+   background:#ff0303;
+   color: white;
+   border: none;
+   border-radius: 0.625em;
+   font-size: 20px;
+   Font-weight: bold;
+   cursor: pointer;
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+  
+}
+  
+button:hover {
+   color: #ff0303;
+  
+}
+
+button:after {
+   content: "";
+    background: white;
+     position: absolute;
+     z-index: -1;
+     left: -20%;
+     right: -20%;
+     top: 0;
+     bottom: 0;
+     transform: skewX(-45deg) scale(0, 1);
+     transition: all 0.5s;
+     
+}
+     
+button:hover:after {
+     transform: skewX(-45deg) scale(1, 1);
+     -webkit-transition: all 0.55;
+     transition: all 0.5s;
+     
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ayuda Extra en el Metro de Monterrey</h1>
+
+    <div class="section">
+        <h2>1. ¿Qué es la Tarjeta "Me Muevo"?</h2>
+        <p>La Tarjeta "Me Muevo" es una tarjeta de pago que permite a los usuarios de Monterrey acceder al Metro, Transmetro y rutas de camiones urbanos sin necesidad de llevar efectivo. Tiene un costo inicial de 20 pesos y se puede recargar en máquinas expendedoras en las estaciones del metro o en tiendas OXXO.</p>
+        <p>También puedes gestionar tu saldo mediante la aplicación Urbani, que ofrece la opción de pagar con tarjeta de crédito o débito y generar un código QR para abordar.</p>
+        <a href="https://movilidadmonterrey.com/tarjeta-memuevo/" class="button">Más información</a>
+    </div>
+
+    <div class="section">
+        <h2>2. ¿Dónde puedo recargar la Tarjeta?</h2>
+        <p>Existen varias opciones para recargar la tarjeta:</p>
+        <ul>
+            <li><strong>Estaciones de Metro:</strong> Puedes recargar la tarjeta en máquinas dentro de todas las estaciones de Metrorrey.</li>
+            <li><strong>Tiendas OXXO:</strong> Más de 1,400 tiendas OXXO en Monterrey permiten la recarga de la tarjeta "Me Muevo" en efectivo.</li>
+            <li><strong>App Urbani:</strong> Desde la aplicación, puedes recargar electrónicamente usando tarjeta de crédito o débito.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. ¿Cómo abordar el Metro de Monterrey?</h2>
+        <p>Sigue estos pasos para abordar el Metro de Monterrey:</p>
+        <ul>
+            <li><strong>1. Compra o recarga tu tarjeta:</strong> Asegúrate de tener saldo suficiente en la tarjeta antes de entrar a la estación.</li>
+            <li><strong>2. Entra al andén:</strong> Desliza tu tarjeta en el lector de acceso en las puertas automáticas.</li>
+            <li><strong>3. Ubica tu ruta:</strong> Verifica el mapa del sistema para asegurarte de abordar la línea correcta hacia tu destino.</li>
+            <li><strong>4. Subir y bajar del tren:</strong> Deja salir a los pasajeros antes de entrar y mantén tus pertenencias seguras en todo momento.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. Contacto y ayuda adicional</h2>
+        <p>En caso de dudas o problemas, puedes contactar al <strong>Centro de Atención al Usuario</strong> al número <strong>070</strong> o buscar ayuda con el personal en cada estación. En caso de emergencias, puedes comunicarte al <strong>911</strong>.</p>
+        <p class="contact-info">Líneas de ayuda: <br> - Emergencias: 911 <br> - Atención Ciudadana: 070 <br> - Denuncia Anónima: 089</p>
+    </div>
+</div>
+
+<footer>
+    © 2024 Metro de Monterrey.
+</footer>
+
+<CENTER>
+    <div class="content"  style="list-style-type:none;">
+        <li><a target="_blank" class="fcc-btn" href="algo.html"><button class="btn"> REGRESAR </button>
+    
+        </li>
+    </div>
+    </CENTER>
+
+
+</body>
+</html>

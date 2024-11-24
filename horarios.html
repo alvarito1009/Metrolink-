@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro y Transmetro Monterrey</title>
+    <style>
+        :root {
+            --primary-blue: #005f99;
+            --secondary-blue: #0078d7;
+            --accent-green: #00866e;
+            --light-blue: #e6f3ff;
+            --light-green: #e6f7f4;
+            --bg-color: #f5f8fa;
+            --text-dark: #2c3e50;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin: 2rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-green);
+        }
+
+        .horarios-metro {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .horarios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .horario-card {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-blue);
+        }
+
+        .horario-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .rutas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .ruta-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .ruta-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ruta-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .ruta-content {
+            padding: 1.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .info-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .paradas {
+            background: var(--light-green);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .paradas h4 {
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .paradas-list {
+            list-style: none;
+        }
+
+        .paradas-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .paradas-list li::before {
+            content: "•";
+            color: var(--accent-green);
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .rutas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .horarios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .btn {
+    width: 8.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background:#ff0303;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    Font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   
+}
+   
+ button:hover {
+    color: #ff0303;
+   
+ }
+ 
+ button:after {
+    content: "";
+     background: white;
+      position: absolute;
+      z-index: -1;
+      left: -20%;
+      right: -20%;
+      top: 0;
+      bottom: 0;
+      transform: skewX(-45deg) scale(0, 1);
+      transition: all 0.5s;
+      
+ }
+      
+ button:hover:after {
+      transform: skewX(-45deg) scale(1, 1);
+      -webkit-transition: all 0.55;
+      transition: all 0.5s;
+ } 
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Metro y Transmetro  de Monterrey</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2 class="section-title">Horarios del Metro</h2>
+            <div class="horarios-metro">
+                <div class="horarios-grid">
+                    <div class="horario-card">
+                        <h3>Lunes a Viernes</h3>
+                        <p>4:30 a.m. - 12:00 a.m.</p>
+                    </div>
+                    <div class="horario-card">
+                        <h3>Sábados</h3>
+                        <p>5:00 a.m. - 12:00 a.m.</p>
+                    </div>
+                    <div class="horario-card">
+                        <h3>Domingos y Festivos</h3>
+                        <p>6:00 a.m. - 12:00 a.m.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Rutas de Transmetro</h2>
+            <div class="rutas-grid">
+                <div class="ruta-card">
+                    <div class="ruta-header">
+                        <h3>Estación Talleres-Cabezada-La Alianza</h3>
+                    </div>
+                    <div class="ruta-content">
+                        <ul class="info-list">
+                            <li><strong>Horario:</strong> 5:00 - 23:15</li>
+                            <li><strong>Frecuencia:</strong> Cada 15 minutos</li>
+                            <li><strong>Tarifa:</strong> $15.00 pesos</li>
+                        </ul>
+                        <div class="paradas">
+                            <h4>Paradas Principales</h4>
+                            <ul class="paradas-list">
+                                <li>Estación Talleres</li>
+                                <li>Av. Aztlán y Av. Apolo</li>
+                                <li>Av. Cabezada y C. Frontón</li>
+                                <li>Av. Cabezada y C. Entrepaño</li>
+                                <li>Av. Cabezada y Av. Canal de Aztlán</li>
+                                <li>Av. Cabezada y C.  Cempoala</li>
+                                <li>Av. Cabezada y Av. Luis Donaldo Colosio</li>
+                                <li>Av. Cabezada y Av. Camino de la Pradera</li>
+                                <li> Av. Cabezada y C. Llanura Blanca</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ruta-card">
+                    <div class="ruta-header">
+                        <h3>Estación Talleres-No Reelección</h3>
+                    </div>
+                    <div class="ruta-content">
+                        <ul class="info-list">
+                            <li><strong>Horario:</strong> 5:00 - 23:30</li>
+                            <li><strong>Frecuencia:</strong> Cada 30 minutos</li>
+                            <li><strong>Tarifa:</strong> $15.00 pesos</li>
+                        </ul>
+                        <div class="paradas">
+                            <h4>Paradas Principales</h4>
+                            <ul class="paradas-list">
+                                <li>Estación Talleres</li>
+                                <li>Av. Aztlán y Av. Apolo</li>
+                                <li>Av. Aztlán y Av. Cabezada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ruta-card">
+                    <div class="ruta-header">
+                        <h3>Estación Talleres-Julio A. Roca</h3>
+                    </div>
+                    <div class="ruta-content">
+                        <ul class="info-list">
+                            <li><strong>Horario:</strong> 5:00 - 23:15</li>
+                            <li><strong>Frecuencia:</strong> Cada 15 minutos</li>
+                            <li><strong>Tarifa:</strong> $15.00 pesos</li>
+                        </ul>
+                        <div class="paradas">
+                            <h4>Paradas Principales</h4>
+                            <ul class="paradas-list">
+                                <li>Estación Talleres</li>
+                                <li>Av. Julio A. Roca y C. Blancas</li>
+                                <li>Av. Julio A. Roca y C. Alfil</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        <div class="ruta-card">
+            <div class="ruta-header">
+                <h3>Estación Mitras - Villas de San Francisco</h3>
+            </div>
+            <div class="ruta-content">
+                <ul class="info-list">
+                    <li><strong>Horario:</strong> 4:00 - 0:00</li>
+                    <li><strong>Frecuencia:</strong> Cada 16 minutos</li>
+                    <li><strong>Tarifa:</strong> $15.00 pesos</li>
+                </ul>
+                <div class="paradas">
+                    <h4>Paradas Principales</h4>
+                    <ul class="paradas-list">
+                        <li>Av. Rodrigo Gómez</li>
+                        <li>Av. Aztlán</li>
+                        <li>Av. Camino Real</li>
+                        <li>Av. Camino a las Pedreras</li>
+                        <li>Av. Constitución</li>
+                        <li>Av. Vista Regia</li>
+                        <li>Av. San Miguel</li>
+                        <li>Carpintero</li>
+                        <li>San Francisco de Asís</li>
+                        <li>Franciscanos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ruta-card">
+            <div class="ruta-header">
+                <h3>Estación Cuauhtémoc - San Agustín - Gómez Morin</h3>
+            </div>
+            <div class="ruta-content">
+                <ul class="info-list">
+                    <li><strong>Horario:</strong> 5:00 - 23:30</li>
+                    <li><strong>Frecuencia:</strong> Cada 30 minutos</li>
+                    <li><strong>Tarifa:</strong> $15.00 pesos</li>
+                </ul>
+                <div class="paradas">
+                    <h4>Paradas Principales</h4>
+                    <ul class="paradas-list">
+                        <li>Av. Cristóbal Colón</li>
+                        <li>Av. Francisco I. Madero</li>
+                        <li>Av. Venustiano Carranza</li>
+                        <li>Av. José Vasconcelos</li>
+                        <li>Av. Manuel Gómez Morín</li>
+                        <li>Batallón de San Patricio</li>
+                        <li>Av. Lázaro Cárdenas</li>
+                        <li>C. José María Arteaga</li>
+                        <li>Av. Cuauhtémoc</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ruta-card">
+            <div class="ruta-header">
+                <h3>Estación Félix U. Gómez - Monte Cristal</h3>
+            </div>
+            <div class="ruta-content">
+                <ul class="info-list">
+                    <li><strong>Horario:</strong> 5:00 - 23:30</li>
+                    <li><strong>Frecuencia:</strong> Cada 30 minutos</li>
+                    <li><strong>Tarifa:</strong> $15.00 pesos</li>
+                </ul>
+                <div class="paradas">
+                    <h4>Paradas Principales</h4>
+                    <ul class="paradas-list">
+                        <li>Av. Francisco I. Madero</li>
+                        <li>Av. Cristóbal Colón</li>
+                        <li>José Ma. Morelos</li>
+                        <li>Av. Tolteca</li>
+                        <li>Av. Eloy Cavazos</li>
+                        <li>Carretera a San Roque</li>
+                        <li>Monte Cristal</li>
+                        <li>Las Torres</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+            </div>
+
+            </div>
+        </section>
+    </div>
+    <CENTER>
+        <div class="content"  style="list-style-type:none;">
+            <li><a target="_blank" class="fcc-btn" href="algo.html"><button class="btn"> REGRESAR </button>
+        
+            </li>
+        </div>
+        </CENTER>
+
+
+</body>
+</html>

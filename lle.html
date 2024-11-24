@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Rutas del Metro</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background: linear-gradient(to right, #ff0376,#f37cff,#edb1f3);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4a148c;
+            margin-top: 20px;
+            font-size: 2.2em;
+        }
+        .container {
+            max-width: 650px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        label {
+            font-weight: bold;
+            color: #4a148c;
+            margin-bottom: 8px;
+            display: block;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #f3e5f5;
+        }
+        button {
+            background-color: #8e24aa;
+            color: white;
+            padding: 12px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #6a1b9a;
+        }
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ede7f6;
+            border: 1px solid #d1c4e9;
+            border-radius: 10px;
+            font-size: 0.95em;
+            color: #4a148c;
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cómo Llegar en el Metro</h1>
+    <div class="container">
+        <label for="entrada">Estación de Entrada:</label>
+        <select id="entrada">
+            <option value="">Selecciona la estación de entrada</option>
+            <option value="">LINEA1 </option>
+            <option value="Talleres">Talleres</option>
+            <option value="San Bernabé">San Bernabé</option>
+            <option value="Unidad Modelo">Unidad Modelo</option>
+            <option value="Aztlán">Aztlán</option>
+            <option value="Penitenciaría">Penitenciaría</option>
+            <option value="Alfonso Reyes">Alfonso Reyes</option>
+            <option value="Mitras">Mitras</option>
+            <option value="Simón Bolívar">Simón Bolívar</option>
+            <option value="Hospital">Hospital</option>
+            <option value="Edison">Edison</option>
+            <option value="Central">Central</option>
+            <option value="Cuauhtémoc">Cuauhtémoc</option>
+            <option value="Del Golfo">Del Golfo</option>
+            <option value="Colón">Colón</option>
+            <option value="Félix U. Gómez">Félix U. Gómez</option>
+            <option value="Parque Fundidora">Parque Fundidora</option>
+            <option value="Y Griega">Y Griega</option>
+            <option value="Eloy Cavazos">Eloy Cavazos</option>
+            <option value="Lerdo de Tejada">Lerdo de Tejada</option>
+            <option value="Exposición">Exposición</option>
+            <option value="">LINEA 2</option>
+            <option value="Sendero">Sendero</option>
+            <option value="Santiago Tapia">Santiago Tapia</option>
+            <option value="San Nicolas">San Nicolás</option>
+            <option value="Anahuac">Anáhuac</option>
+            <option value="Universidad">Universidad</option>
+            <option value="Niños héroes">Niños Héroes</option>
+            <option value="Regina">Regina</option>
+            <option value="General Anaya">General Anaya</option>
+            <option value="Cuauhtémoc">Cuauhtémoc</option>
+            <option value="Alameda">Alameda</option>
+            <option value="Fundadores">Fundadores</option>
+            <option value="Padre Mier">Padre Mier</option>
+            <option value="General I. Zaragoza">General I. Zaragoza</option>
+            <option value="">LÍNEA 3</option>
+            <option value="Hospital Metropolitano">Hospital Metropolitano</option>
+            <option value="Los Angeles">Los Ángeles</option>
+            <option value="Ruiz Cortines">Ruiz Cortines</option>
+            <option value="Moderna">Moderna</option>
+            <option value="Metalúrgicos">Metalúrgicos</option>
+            <option value="Colonia Obrera">Colonia Obrera</option>
+            <option value="Santa Lucía">Santa Lucía</option>
+            <option value="General I. Zaragoza">General I. Zaragoza</option>
+</select>
+
+        </select>
+
+        <label for="salida">Estación de Salida:</label>
+        <select id="salida">
+              <option value="">Selecciona la estación de entrada</option>
+            <option value="Talleres">Talleres</option>
+            <option value="San Bernabé">San Bernabé</option>
+            <option value="Unidad Modelo">Unidad Modelo</option>
+            <option value="Aztlán">Aztlán</option>
+            <option value="Penitenciaría">Penitenciaría</option>
+            <option value="Alfonso Reyes">Alfonso Reyes</option>
+            <option value="Mitras">Mitras</option>
+            <option value="Simón Bolívar">Simón Bolívar</option>
+            <option value="Hospital">Hospital</option>
+            <option value="Edison">Edison</option>
+            <option value="Central">Central</option>
+            <option value="Cuauhtémoc">Cuauhtémoc</option>
+            <option value="Del Golfo">Del Golfo</option>
+            <option value="Colón">Colón</option>
+            <option value="Félix U. Gómez">Félix U. Gómez</option>
+            <option value="Parque Fundidora">Parque Fundidora</option>
+            <option value="Y Griega">Y Griega</option>
+            <option value="Eloy Cavazos">Eloy Cavazos</option>
+            <option value="Lerdo de Tejada">Lerdo de Tejada</option>
+            <option value="Exposición">Exposición</option>
+            <option value="">LINEA 2</option>
+            <option value="Sendero">Sendero</option>
+            <option value="Santiago Tapia">Santiago Tapia</option>
+            <option value="San Nicolas">San Nicolás</option>
+            <option value="Anahuac">Anáhuac</option>
+            <option value="Universidad">Universidad</option>
+            <option value="Niños héroes">Niños Héroes</option>
+            <option value="Regina">Regina</option>
+            <option value="General Anaya">General Anaya</option>
+            <option value="Cuauhtémoc">Cuauhtémoc</option>
+            <option value="Alameda">Alameda</option>
+            <option value="Fundadores">Fundadores</option>
+            <option value="Padre Mier">Padre Mier</option>
+            <option value="General I. Zaragoza">General I. Zaragoza</option>
+            <option value="">LÍNEA 3</option>
+            <option value="Hospital Metropolitano">Hospital Metropolitano</option>
+            <option value="Los Angeles">Los Ángeles</option>
+            <option value="Ruiz Cortines">Ruiz Cortines</option>
+            <option value="Moderna">Moderna</option>
+            <option value="Metalúrgicos">Metalúrgicos</option>
+            <option value="Colonia Obrera">Colonia Obrera</option>
+            <option value="Santa Lucía">Santa Lucía</option>
+            <option value="General I. Zaragoza">General I. Zaragoza</option>
+        </select>
+
+        <button onclick="mostrarInstrucciones()">Ver Instrucciones</button>
+
+        <div id="instrucciones" class="instructions"></div>
+    </div>
+
+    <script>
+        const instrucciones = {
+            "Talleres": {
+                "General I. Zaragoza": [
+                    "Desde la estación Talleres en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza."
+                ],
+            },
+            "San Bernabé": {
+                "Sendero": [
+                    "Desde la estación San Bernabé en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Unidad Modelo": {
+                "Sendero": [
+                    "Desde la estación Unidad Modelo en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Aztlan": {
+                "General I.Zaragoza": [
+                    "Desde la estación Aztlan en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a General I.Zaragoza.",
+                    "Baja en General I.Zaragoza."
+                ]
+            },
+            "Penitenciaría": {
+                "Cuauhtémoc": [
+                    "Desde la estación Penitenciaría en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Cuauhtémoc."
+                ]
+            },
+            "Alfonso Reyes": {
+                "Sendero": [
+                    "Desde la estación Alfonso Reyes en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Mitras": {
+                "General I. Zaragoza": [
+                    "Desde la estación Mitras en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza."
+                ]
+            },
+            "Simón Bolívar": {
+                "Cuauhtémoc": [
+                    "Desde la estación Simón Bolívar en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Cuauhtémoc."
+                ]
+            },
+            "Hospital": {
+                "Sendero": [
+                    "Desde la estación Hospital en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Edison": {
+                "General I. Zaragoza": [
+                    "Desde la estación Edison en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza."
+                ]
+            },
+            "Central": {
+                "Cuauhtémoc": [
+                    "Desde la estación Central en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Cuauhtémoc."
+                ]
+            },
+            "Cuauhtémoc": {
+                "Sendero": [
+                    "Desde la estación Cuauhtémoc en la Línea 1, transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Del Golfo": {
+                "General I. Zaragoza": [
+                    "Desde la estación Del Golfo en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza."
+                ]
+            },
+            "Colón": {
+                "Cuauhtémoc": [
+                    "Desde la estación Colón en la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Cuauhtémoc."
+                ]
+            },
+            "Félix U. Gómez": {
+                "Sendero": [
+                    "Desde la estación Félix U. Gómez en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Parque Fundidora": {
+                "General I. Zaragoza": [
+                    "Desde la estación Parque Fundidora en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza."
+                ]
+            },
+            "Y Griega": {
+                "Cuauhtémoc": [
+                    "Desde la estación Y Griega en la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Cuauhtémoc."
+                ]
+            },
+            "Eloy Cavazos": {
+                "Sendero": [
+                    "Desde la estación Eloy Cavazos en la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Lerdo de Tejada": {
+                "General I. Zaragoza": [
+                    "Desde la estación Lerdo de Tejada en la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza."
+                ]
+            },
+            "Exposición": {
+                "Sendero": [
+                    "Desde la estación Exposición en la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Sendero": {
+                "Exposición": [
+                    "Desde la estación Sendero en la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Exposición."
+                ]
+            },
+            "Santiago Tapia": {
+                "Talleres": [
+                    "Desde la estación Santiago Tapia en la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Talleres."
+                ]
+            },
+            "San Nicolas": {
+                "Eloy Cavazos": [
+                    "Desde la estación San Nicolás en la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Eloy Cavazos."
+                ]
+            },
+            "Anáhuac": {
+                "Parque Fundidora": [
+                    "Desde la estación Anáhuac en la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Parque Fundidora."
+                ]
+            },
+            "Universidad": {
+                "Y Griega": [
+                    "Desde la estación Universidad en la Línea 2, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Y Griega."
+                ]
+            },
+            "Niños Héroes": {
+                "Mitras": [
+                    "Desde la estación Niños Héroes en la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Mitras."
+                ]
+            },
+            "Regina": {
+                "Del Golfo": [
+                    "Desde la estación Regina en la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Del Golfo."
+                ]
+            },
+            "General Anaya": {
+                "Penitenciaría": [
+                    "Desde la estación General Anaya en la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Penitenciaría."
+                ]
+            },
+            "Cuauhtémoc": {
+                "Unidad Modelo": [
+                    "Desde la estación Cuauhtémoc, transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Unidad Modelo."
+                ]
+            },
+            "Alameda": {
+                "Félix U. Gómez": [
+                    "Desde la estación Alameda en la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Félix U. Gómez."
+                ]
+            },
+            "Fundadores": {
+                "Hospital": [
+                    "Desde la estación Fundadores en la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Hospital."
+                ]
+            },
+            "Padre Mier": {
+                "Colón": [
+                    "Desde la estación Padre Mier en la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Colón."
+                ]
+            },
+            "General I. Zaragoza": {
+                "Aztlán": [
+                    "Desde la estación General I. Zaragoza en la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Aztlán."
+                ]
+            },
+            "Hospital Metropolitano": {
+                "Exposición": [
+                    "Desde la estación Hospital Metropolitano en la Línea 3, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en la estación General I. Zaragoza y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en la estación Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Exposición."
+                ]
+            },
+            "Los Ángeles": {
+                "Talleres": [
+                    "Desde la estación Los Ángeles en la Línea 3, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Talleres."
+                ]
+            },
+            "Ruiz Cortines": {
+                "Sendero": [
+                    "Desde la estación Ruiz Cortines en la Línea 3, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en la estación General I. Zaragoza y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Sendero."
+                ]
+            },
+            "Moderna": {
+                "Penitenciaría": [
+                    "Desde la estación Moderna en la Línea 3, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Talleres.",
+                    "Baja en Penitenciaría."
+                ]
+            },
+            "Metalúrgicos": {
+                "General I. Zaragoza": [
+                    "Desde la estación Metalúrgicos en la Línea 3, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza."
+                ]
+            },
+            "Colonia Obrera": {
+                "Exposición": [
+                    "Desde la estación Colonia Obrera en la Línea 3, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Exposición."
+                ]
+            },
+            "Santa Lucía": {
+                "Hospital": [
+                    "Desde la estación Santa Lucía en la Línea 3, toma el metro en dirección a General I. Zaragoza.",
+                    "Baja en General I. Zaragoza y transfiere a la Línea 2.",
+                    "En la Línea 2, toma el metro en dirección a Sendero.",
+                    "Baja en Cuauhtémoc y transfiere a la Línea 1.",
+                    "En la Línea 1, toma el metro en dirección a Exposición.",
+                    "Baja en Hospital."
+                ]
+            }
+
+        };
+
+        function mostrarInstrucciones() {
+            const entrada = document.getElementById("entrada").value;
+            const salida = document.getElementById("salida").value;
+            const instruccionesDiv = document.getElementById("instrucciones");
+            
+            if (entrada && salida && instrucciones[entrada] && instrucciones[entrada][salida]) {
+                let pasos = instrucciones[entrada][salida].map(paso => `<p>${paso}</p>`).join('');
+                instruccionesDiv.innerHTML = pasos;
+                instruccionesDiv.style.display = "block";
+            } else {
+                instruccionesDiv.innerHTML = "<p>Por favor, selecciona una estación de entrada y salida válidas.</p>";
+                instruccionesDiv.style.display = "block";
+            }
+        }
+    </script>
+
+
+
+<br><br>
+
+
+<CENTER>
+<div class="content"  style="list-style-type:none;">
+    <li><a target="_blank" class="fcc-btn" href="algo.html"><button class="btn"> REGRESAR </button>
+
+    </li>
+</div>
+</CENTER>
+
+</body>
+</html>

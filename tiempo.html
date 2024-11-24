@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempo en Metro</title>
+    <style>
+        body {
+     
+     
+     align-items: center;
+     background: linear-gradient(to right, #2153f8,#08c6e8,#edf4f7);
+     height: 100vh;
+         
+            font-size: 2em;
+            color: #333;
+            margin-top: 20px;
+        }
+        
+        button {width: 8.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background:#ff0303;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    Font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   
+}
+   
+        .btn {
+    width: 8.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background:#ff0303;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    Font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   
+}
+   
+ button:hover {
+    color: #ff0303;
+   
+ }
+ 
+ button:after {
+    content: "";
+     background: white;
+      position: absolute;
+      z-index: -1;
+      left: -20%;
+      right: -20%;
+      top: 0;
+      bottom: 0;
+      transform: skewX(-45deg) scale(0, 1);
+      transition: all 0.5s;
+      
+ }
+      
+ button:hover:after {
+      transform: skewX(-45deg) scale(1, 1);
+      -webkit-transition: all 0.55;
+      transition: all 0.5s;
+ } 
+
+ 
+ 
+
+    </style>
+</head>
+<body>
+    <h1>Cuanto tiempo paso en el metro en el dia?</h1>
+    <p>Haz clic en el botón para saber su tiempo total en el dia</p>
+    <button onclick="generateRandomTime()">Su tiempo</button>
+    <div id="result"></div>
+
+    <script>
+        function generateRandomTime() {
+            
+            const hours = Math.floor(Math.random() * 3);
+            
+            const minutes = Math.floor(Math.random() * 20);
+            
+            
+            const formattedMinutes = minutes.toString().padStart(2, '0');
+            
+     
+            document.getElementById('result').textContent = `Tiempo acumulado: ${hours} horas y ${formattedMinutes} minutos`;
+        }
+    </script>
+
+<CENTER>
+    <div class="content"  style="list-style-type:none;">
+        <li><a target="_blank" class="fcc-btn" href="algo.html"><button class="btn"> REGRESAR </button>
+    
+        </li>
+    </div>
+    </CENTER>
+
+</body>
+</html>
